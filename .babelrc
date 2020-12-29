@@ -7,6 +7,7 @@
         [
             "react-css-modules",
             {
+                "autoResolveMultipleImports": true,
                 "filetypes": {
                     ".scss": {
                         "syntax": "postcss-scss"
