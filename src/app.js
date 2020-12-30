@@ -1,22 +1,28 @@
 import React from 'react'
-import './styles/global.scss'
-import './styles/global.module.scss'
 import { Helmet } from 'react-helmet'
-
-import icon from '../favicon.png'
 import Favicon from 'react-favicon'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+
+import Home from './views/home.js'
+import './styles/global.scss'
+import icon from '../favicon.png'
 
 const app = () => (
-  <>
+  <Router>
     <Helmet>
       <title>WebSkeleton for React!</title>
     </Helmet>
     <Favicon url={icon} />
-    <h1>
-      <p styleName='test-module'>Testing 123</p>
-      <p className='test'>Welcome to React!</p>
-    </h1>
-  </>
+    <Switch>
+      <Route path='/'>
+        <Home />
+      </Route>
+    </Switch>
+  </Router>
 )
 
 export default app
